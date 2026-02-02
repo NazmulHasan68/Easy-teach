@@ -1,0 +1,37 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Services from "./pages/Services";
+import Contact from "./pages/Contact";
+import GeneralLayout from "./layouts/GeneralLayout";
+import Project from "./pages/Project";
+import OurClient from "./pages/OurClient";
+import ServiceErp from "./pages/ServiceErp";
+import ServiceWeb from "./pages/ServiceWeb";
+import ServiceDigital from "./pages/ServiceDigital";
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route element={<GeneralLayout />}>
+          <Route path="/" element={<Home />} />
+
+          {/* Pages */}
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/project" element={<Project />} />
+          <Route path="/our-client" element={<OurClient />} />
+
+          {/* Services Main Page */}
+          <Route path="/services" element={<Services />} />
+
+          {/* Services Dropdown Pages */}
+          <Route path="/services/web" element={<ServiceWeb />} />
+          <Route path="/services/marketing" element={<ServiceDigital />} />
+          <Route path="/services/erp" element={<ServiceErp />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
