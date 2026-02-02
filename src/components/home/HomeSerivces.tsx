@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
 
 import serices1 from "@/assets/img/services/s1-icon-1.png";
 import serices2 from "@/assets/img/services/s1-icon-2.png";

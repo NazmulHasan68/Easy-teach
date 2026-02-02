@@ -17,7 +17,7 @@ export default function ProjectView() {
   return (
     <section className="bg-neutral-100">
       {projects.map((project, index) => (
-        <div key={project.id} className="h-screen relative">
+        <div key={project.id+index} className="h-screen relative">
           {/* Sticky Paper */}
           <div className="sticky top-0 h-screen flex items-center justify-center">
             <div className="relative w-[90%] h-[85vh] rounded-3xl overflow-hidden shadow-2xl group">
