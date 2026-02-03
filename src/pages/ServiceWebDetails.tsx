@@ -3,6 +3,13 @@ import { motion } from "framer-motion";
 import { webProjects } from "@/components/data/webprojectDeta";
 import { ExternalLink } from "lucide-react";
 
+/* Small reusable component */
+interface InfoItemProps {
+  label: string;
+  value: string | number; // if value can also be number
+}
+
+
 export default function ServiceWebDetails() {
   const { id } = useParams();
   const project = webProjects.find((p) => p.id === id);
@@ -148,7 +155,7 @@ export default function ServiceWebDetails() {
 }
 
 /* Small reusable component */
-function InfoItem({ label, value }) {
+function InfoItem({ label, value }: InfoItemProps) {
   return (
     <div>
       <p className="text-gray-500">{label}</p>
