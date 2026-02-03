@@ -8,14 +8,9 @@ import l3 from "@/assets/img/3.png";
 import l4 from "@/assets/img/4.png";
 import l5 from "@/assets/img/5.png";
 import l6 from "@/assets/img/6.png";
-import l7 from "@/assets/img/7.png";
-import l8 from "@/assets/img/8.png";
-import l9 from "@/assets/img/9.png";
-import l10 from "@/assets/img/10.png";
-import l11 from "@/assets/img/11.png";
-import l12 from "@/assets/img/12.png";
 
-const logos = [l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12];
+
+const logos = [l1, l2, l3, l4, l5, l6];
 
 export default function HomeTopClient() {
   return (
