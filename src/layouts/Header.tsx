@@ -103,7 +103,7 @@ export default function Header() {
                   `font-medium transition ${
                     isActive
                       ? "text-[#2E602F] border-b-2 border-[#98BC62] pb-1"
-                      : "text-[#0d240d] hover:text-[#2E602F]"
+                      : "text-[#1d571d] hover:text-[#153016]"
                   }`
                 }
               >
