@@ -123,7 +123,7 @@ export default function Header() {
       </div>
 
       {/* Mobile Drawer */}
-      <AnimatePresence>
+      <AnimatePresence >
         {mobileOpen && (
           <motion.div
             initial={{ x: "100%" }}
@@ -139,11 +139,11 @@ export default function Header() {
               </button>
             </div>
 
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col bg-white gap-3">
               {navItems.map((item) =>
                 item.dropdown ? (
                   <div key={item.name} className="flex flex-col">
-                    <p className="font-semibold text-[#98BC62] mb-2">
+                    <p className="font-semibold text-[#243110] mb-2">
                       {item.name}
                     </p>
                     {item.dropdown.map((sub) => (
@@ -151,7 +151,7 @@ export default function Header() {
                         key={sub.name}
                         to={sub.path}
                         onClick={() => setMobileOpen(false)}
-                        className="pl-3 py-2 text-[#98BC62] hover:text-[#2E602F]"
+                        className="pl-3 py-2 text-[#101a01] hover:text-[#1b421c]"
                       >
                         {sub.name}
                       </NavLink>

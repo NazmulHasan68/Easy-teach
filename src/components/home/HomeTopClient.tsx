@@ -42,7 +42,7 @@ export default function HomeTopClient() {
             Trusted By
           </p>
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900">
-            Leading <span className="text-pink-500">Brands</span> & Businesses
+            Leading <span className="text-[#2E602F]">Brands</span> & Businesses
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto mt-4 text-sm md:text-lg">
             We proudly collaborate with companies that trust our expertise to
