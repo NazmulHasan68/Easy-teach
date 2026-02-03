@@ -32,6 +32,7 @@ export default function App() {
           {/* Services Dropdown Pages */}
           <Route path="/services/web" element={<ServiceWeb />} />
           <Route path="/services/web/:id" element={<ServiceWebDetails />} />
+          
           <Route path="/services/marketing" element={<ServiceDigital />} />
           <Route path="/services/erp" element={<ServiceErp />} />
         </Route>

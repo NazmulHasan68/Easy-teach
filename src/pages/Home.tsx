@@ -6,7 +6,7 @@ import HomeResearch from "@/components/home/HomeResearch";
 import HomeServices from "@/components/home/HomeSerivces";
 import HomeShapment from "@/components/home/HomeShapment";
 import HomeSolutions from "@/components/home/HomeSolutions";
-import HomeTopClient from "@/components/home/HomeTopClient";
+import HomeTopClientSlider from "@/components/home/HomeTopClientSlider";
 import HomeTrustedClient from "@/components/home/HomeTrustedCline";
 
 export default function Home() {
@@ -20,6 +20,7 @@ export default function Home() {
     <HomeShapment/>
     <HomeProject/>
     <HomeClientSay/>
-    <HomeTopClient/>
+    <HomeTopClientSlider/>
+    {/* <HomeTopClient/> */}
   </div>;
 }
