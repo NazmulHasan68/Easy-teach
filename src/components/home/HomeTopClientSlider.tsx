@@ -53,7 +53,7 @@ export default function HomeTopClientSlider() {
         {/* Slider */}
         <div className="relative overflow-hidden">
           <motion.div
-            className="flex gap-6 w-max"
+            className="flex gap-2 w-max"
             animate={{ x: ["0%", "-50%"] }}
             transition={{
               duration: 30,
@@ -65,7 +65,7 @@ export default function HomeTopClientSlider() {
               <div
                 key={index}
                 className="group min-w-[180px] md:min-w-[220px]
-                           bg-white/10 border border-[#98BC62]/20
+                           bg-white m-3 border border-[#98BC62]/20
                            rounded-2xl shadow-md hover:shadow-2xl
                            transition-all duration-500
                            flex items-center justify-center p-6 md:p-8"
