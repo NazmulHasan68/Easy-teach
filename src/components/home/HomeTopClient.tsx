@@ -2,15 +2,23 @@
 
 import { motion } from "framer-motion";
 
-import l1 from "@/assets/img/1.png";
-import l2 from "@/assets/img/2.png";
-import l3 from "@/assets/img/3.png";
-import l4 from "@/assets/img/4.png";
-import l5 from "@/assets/img/5.png";
-import l6 from "@/assets/img/6.png";
+// import f1 from "@/assets/img/1.png";
+import f2 from "@/assets/img/2.png";
+import f3 from "@/assets/img/3.png";
+import f4 from "@/assets/img/4.png";
+import f5 from "@/assets/img/5.png";
+import f6 from "@/assets/img/6.png";
+
+import l1 from "@/assets/img/client_logo/1.png"
+import l2 from "@/assets/img/client_logo/2.png"
+import l3 from "@/assets/img/client_logo/3.png"
+import l4 from "@/assets/img/client_logo/4.png"
+import l5 from "@/assets/img/client_logo/5.png"
+import l6 from "@/assets/img/client_logo/6.png"
+import l7 from "@/assets/img/client_logo/7.png"
 
 
-const logos = [l1, l2, l3, l4, l5, l6];
+const logos = [ f2, f3, f4, f5, f6, l1, l2, l3, l4, l5, l6, l7];
 
 export default function HomeTopClient() {
   return (
@@ -46,12 +54,12 @@ export default function HomeTopClient() {
         </div>
 
         {/* ===== Logo Grid ===== */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6">
           {logos.map((logo, index) => (
             <motion.div
               key={index}
               whileHover={{ y: -8 }}
-              className="group relative rounded-2xl bg-white border border-[#98BC62]/20
+              className="group relative rounded-2xl bg-white/80 border border-[#98BC62]/60
                          shadow-md hover:shadow-2xl transition-all duration-500
                          flex items-center justify-center p-6 md:p-8"
             >
