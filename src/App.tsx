@@ -11,6 +11,8 @@ import ServiceWeb from "./pages/ServiceWeb";
 import ServiceDigital from "./pages/ServiceDigital";
 import ProjectDetails from "./pages/ProjectDetails";
 import ServiceWebDetails from "./pages/ServiceWebDetails";
+import ServiceDigitalProjectDetails from "./components/Serives/ServiceDigitalProjectDetails";
+import ServiceErpProjectDetails from "./components/Serives/ServiceErpProjectDetails";
 
 export default function App() {
   return (
@@ -32,9 +34,12 @@ export default function App() {
           {/* Services Dropdown Pages */}
           <Route path="/services/web" element={<ServiceWeb />} />
           <Route path="/services/web/:id" element={<ServiceWebDetails />} />
-          
+
           <Route path="/services/marketing" element={<ServiceDigital />} />
+          <Route path="/services/marketing/:id" element={<ServiceDigitalProjectDetails />} />
+
           <Route path="/services/erp" element={<ServiceErp />} />
+          <Route path="/services/erp/:id" element={<ServiceErpProjectDetails />} />
         </Route>
       </Routes>
     </BrowserRouter>

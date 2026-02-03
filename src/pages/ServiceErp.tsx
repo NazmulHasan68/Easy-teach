@@ -6,12 +6,13 @@ import ServiceErpBanner from "@/components/Serives/ServiceErpBanner";
 import WhatWeProvide from "@/components/Serives/WhatWeProvide";
 import ServiceWebChallenges from "@/components/Serives/ServiceWebChallenges";
 import ServiceErpQuestion from "@/components/Serives/ServiceErpQustion";
+import ServiceErpProject from "@/components/Serives/ServiceErpProject";
 
 export default function ServiceErp() {
   return (
     <>
       <ServiceErpBanner />
-
+      <ServiceErpProject/>
       <section className="max-w-7xl mx-auto px-0 lg:px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
 

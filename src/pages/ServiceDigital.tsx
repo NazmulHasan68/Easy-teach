@@ -5,12 +5,13 @@ import ServiceDigitalBanner from "@/components/Serives/ServiceDigitalbanner";
 import WhatWeProvide from "@/components/Serives/WhatWeProvide";
 import ServiceWebChallenges from "@/components/Serives/ServiceWebChallenges";
 import ServiceDigitalQuestion from "@/components/Serives/ServiceDigitalQuestion";
+import ServiceDigitalProject from "@/components/Serives/ServiceDigitalProject";
 
 export default function ServiceDigital() {
   return (
     <>
       <ServiceDigitalBanner />
-
+      <ServiceDigitalProject />
       <section className="max-w-7xl mx-auto px-1 lg:px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
 
@@ -19,8 +20,6 @@ export default function ServiceDigital() {
             <ServiceDigitalIntro />
             <WhatWeProvide/>
             <ServiceWebChallenges/>
-            {/* <AboutFeatures />
-            <AboutChallenges /> */}
             <ServiceDigitalQuestion/>
           </div>
 
