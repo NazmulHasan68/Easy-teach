@@ -68,7 +68,7 @@ export default function Header() {
                 onMouseEnter={() => setOpenDropdown(item.name)}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
-                <button className="flex items-center gap-1 font-medium text-gray-800 hover:text-[#2E602F] transition">
+                <button className="flex items-center gap-1 font-medium text-[#0d240d] hover:text-[#2E602F] transition">
                   {item.name}
                   <ChevronDown size={16} />
                 </button>
@@ -86,7 +86,7 @@ export default function Header() {
                         <NavLink
                           key={sub.name}
                           to={sub.path}
-                          className="block px-4 py-2 rounded-md text-gray-700 hover:bg-[#98BC62]/10 hover:text-[#2E602F] transition"
+                          className="block px-4 py-2 rounded-md text-[#0d240d] hover:bg-[#98BC62]/10 hover:text-[#2E602F] transition"
                         >
                           {sub.name}
                         </NavLink>
@@ -103,7 +103,7 @@ export default function Header() {
                   `font-medium transition ${
                     isActive
                       ? "text-[#2E602F] border-b-2 border-[#98BC62] pb-1"
-                      : "text-gray-800 hover:text-[#2E602F]"
+                      : "text-[#0d240d] hover:text-[#2E602F]"
                   }`
                 }
               >
@@ -151,7 +151,7 @@ export default function Header() {
                         key={sub.name}
                         to={sub.path}
                         onClick={() => setMobileOpen(false)}
-                        className="pl-3 py-2 text-gray-700 hover:text-[#2E602F]"
+                        className="pl-3 py-2 text-[#0d240d] hover:text-[#2E602F]"
                       >
                         {sub.name}
                       </NavLink>
@@ -162,7 +162,7 @@ export default function Header() {
                     key={item.name}
                     to={item.path!}
                     onClick={() => setMobileOpen(false)}
-                    className="py-2 font-medium text-gray-800 hover:text-[#2E602F]"
+                    className="py-2 font-medium text-[#133113] hover:text-[#2E602F]"
                   >
                     {item.name}
                   </NavLink>
