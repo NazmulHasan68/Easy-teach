@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import image from "@/assets/img/about.jpg";
+import { ArrowRight } from "lucide-react";
 
 export default function AboutBreadcrumb() {
   return (
@@ -23,22 +24,18 @@ export default function AboutBreadcrumb() {
         transition={{ duration: 1 }}
         className="relative z-10 text-center max-w-4xl px-6"
       >
-        {/* Breadcrumb */}
-        <div className="inline-block mb-8 px-6 py-2 rounded-full border border-white/30 bg-white/10 backdrop-blur-md text-sm tracking-widest uppercase">
-          Home <span className="mx-2">/</span> About Us
-        </div>
-
-        {/* Main Title */}
-        <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-6">
-          We Build Digital Experiences <br /> That Drive Real Growth
+          {/* Main Title */}
+        <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-6">
+          About Us
         </h1>
 
-        {/* Middle Text */}
-        <p className="text-md md:text-xl text-gray-200 leading-relaxed">
-          At EasyTech Solutions, we transform ideas into powerful websites,
-          intelligent systems, and impactful digital strategies that help
-          businesses scale, connect, and succeed in the modern world.
-        </p>
+          {/* Breadcrumb */}
+        <div className="flex gap-1 bg-[#2D602E] justify-center items-center mb-8 px-3 py-2 rounded-full border border-[#2D602E]/30 shadow-2xl  backdrop-blur-md text-sm tracking-widest uppercase">
+          Services <span className="mx-1 text-amber-500 font-bold flex gap-2"><ArrowRight/>About Us</span> 
+        </div>
+
+      
+
       </motion.div>
     </section>
   );

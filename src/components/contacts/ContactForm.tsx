@@ -51,9 +51,9 @@ export default function ContactForm() {
   }
 
   return (
-  <section className="py-5 bg-gradient-to-br from-emerald-50 via-white to-emerald-100">
-    <div className="max-w-5xl mx-auto px-4">
-      <div className="relative bg-white/80 backdrop-blur-xl border border-emerald-100 shadow-[0_20px_60px_rgba(0,0,0,0.08)] rounded-[32px] p-10 lg:p-14">
+  <section className="py-4 bg-gradient-to-br from-emerald-50 via-white to-emerald-100">
+    <div className="max-w-5xl mx-auto px-2 md:px-4">
+      <div className="relative bg-white/80 backdrop-blur-xl border border-emerald-100 shadow-[0_20px_60px_rgba(0,0,0,0.08)] rounded-[32px] p-6 lg:p-14">
 
         {/* Decorative glow */}
         <div className="absolute -top-10 -left-10 w-40 h-40 bg-emerald-200 rounded-full blur-3xl opacity-30"></div>
@@ -61,10 +61,10 @@ export default function ContactForm() {
 
         <div className="relative z-10">
           <div className="text-center mb-12">
-            <h3 className="text-2xl font-bold text-gray-900 mb-3">
+            <h3 className="md:text-2xl text-xl font-bold text-gray-900 mb-3">
               Let’s Build Something Amazing
             </h3>
-            <p className="text-gray-500 max-w-xl mx-auto">
+            <p className="text-gray-500 text-left max-w-xl mx-auto">
               Tell us about your project and our team will get back to you within 24 hours.
             </p>
           </div>
@@ -72,7 +72,7 @@ export default function ContactForm() {
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
-              className="grid lg:grid-cols-2 gap-6"
+              className="grid lg:grid-cols-2 gap-3 md:gap-6"
             >
               {/* Name */}
               <FormField

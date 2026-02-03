@@ -1,5 +1,7 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 import l1 from "@/assets/img/1.png";
 import l2 from "@/assets/img/2.png";
 import l3 from "@/assets/img/3.png";
@@ -17,48 +19,56 @@ const logos = [l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12];
 
 export default function HomeTopClient() {
   return (
-    <section className="relative py-28 overflow-hidden bg-[#f8fbf9]">
-      
-      {/* 🔵 Animated Background Blobs */}
-      <div className="absolute -top-32 -left-32 w-[500px] h-[500px] bg-green-200 rounded-full blur-[140px] opacity-40 animate-pulse" />
-      <div className="absolute bottom-0 right-0 w-[450px] h-[450px] bg-emerald-300 rounded-full blur-[140px] opacity-40 animate-pulse" />
-      <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-lime-200 rounded-full blur-[140px] opacity-30 animate-pulse" />
+    <section className="relative py-24 md:py-32 overflow-hidden">
+      {/* ===== Premium Gradient Background ===== */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#f3f8f3] via-white to-[#eef6ee]" />
 
-      <div className="relative max-w-7xl mx-auto px-6 z-10">
-        
-        {/* Title */}
-        <div className="text-center mb-20">
-          <h3 className="text-4xl font-bold text-blue-600 mb-4">
-            Our Top Clients
-          </h3>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Every pleasure is to be welcomed and every pain avoided under certain circumstances.
+      {/* ===== Elegant Ambient Lights ===== */}
+      <motion.div
+        animate={{ y: [0, -40, 0], x: [0, 30, 0] }}
+        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+        className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-[#98BC62]/20 blur-[150px] rounded-full"
+      />
+      <motion.div
+        animate={{ y: [0, 50, 0], x: [0, -30, 0] }}
+        transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
+        className="absolute bottom-0 -right-40 w-[500px] h-[500px] bg-[#2E602F]/20 blur-[150px] rounded-full"
+      />
+
+      <div className="relative max-w-7xl mx-auto px-4 md:px-8 z-10">
+        {/* ===== Title ===== */}
+        <div className="text-center mb-14 md:mb-20">
+          <p className="uppercase tracking-[0.35em] text-[#2E602F] font-semibold text-xs mb-4">
+            Trusted By
+          </p>
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900">
+            Leading <span className="text-pink-500">Brands</span> & Businesses
+          </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto mt-4 text-sm md:text-lg">
+            We proudly collaborate with companies that trust our expertise to
+            grow and innovate in the digital world.
           </p>
         </div>
 
-        {/* Logo Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-10 items-center">
+        {/* ===== Logo Grid ===== */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-8">
           {logos.map((logo, index) => (
-            <div
+            <motion.div
               key={index}
-              className="group relative backdrop-blur-xl cursor-pointer bg-white/80 border border-white/40
-                         rounded-3xl p-8 flex items-center justify-center
-                         shadow-md hover:shadow-2xl hover:-translate-y-3
-                         transition duration-500"
+              whileHover={{ y: -8 }}
+              className="group relative rounded-2xl bg-white border border-[#98BC62]/20
+                         shadow-md hover:shadow-2xl transition-all duration-500
+                         flex items-center justify-center p-6 md:p-8"
             >
-              {/* soft inner glow */}
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/40 to-transparent opacity-0 group-hover:opacity-100 transition" />
+              {/* Shine effect */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/40 to-transparent opacity-0 group-hover:opacity-100 transition duration-500" />
 
-              <div className="relative w-28 h-16">
-                <img
-                  src={logo}
-                  alt={`Client ${index + 1}`}
-                  className="w-full h-full object-contain grayscale 
-                             group-hover:grayscale-0 opacity-70 group-hover:opacity-100
-                             transition duration-500"
-                />
-              </div>
-            </div>
+              <img
+                src={logo}
+                alt={`Client Logo ${index + 1}`}
+                className="w-full h-12 md:h-14 object-contain transition duration-500"
+              />
+            </motion.div>
           ))}
         </div>
       </div>

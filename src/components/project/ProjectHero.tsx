@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
+
 import banner from "@/assets/img/pm.jpg"
+import { ArrowRight } from "lucide-react";
 
 export default function ProjectHero() {
   return (
-    <section className="relative h-[420px] flex items-center justify-center overflow-hidden">
+    <section className="relative h-[100vh] flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <img
         src={banner}
@@ -20,15 +21,9 @@ export default function ProjectHero() {
           Our Projects
         </h1>
 
-        <div className="flex items-center justify-center gap-3 text-lg opacity-90 animate-fade-up delay-150">
-          <Link
-            to="/"
-            className="hover:text-emerald-400 transition-colors duration-300"
-          >
-            Home
-          </Link>
-          <span className="opacity-60">/</span>
-          <span className="text-emerald-400">Our Projects</span>
+        {/* Breadcrumb */}
+        <div className="flex gap-1 bg-[#2D602E] justify-center items-center mb-8 px-3 py-2 rounded-full border border-[#2D602E]/30 shadow-2xl  backdrop-blur-md text-sm tracking-widest uppercase">
+          Home <span className="mx-1 text-amber-500 font-bold mt-1 flex gap-2"><ArrowRight/>Project</span> 
         </div>
       </div>
     </section>

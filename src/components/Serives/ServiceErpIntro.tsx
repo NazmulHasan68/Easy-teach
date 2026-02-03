@@ -1,82 +1,102 @@
 "use client";
 
 import { motion } from "framer-motion";
-import erpImg from "@/assets/img/res.jpg"; // use ERP related image
+import erpImg from "@/assets/img/res.jpg"; // ERP related image
+import { CheckCircle } from "lucide-react";
+import SEO from "../SEO";
+
+const features = [
+  "Inventory, Sales & Purchase Management",
+  "Accounts, HR & Payroll Automation",
+  "CRM, Leads & Client Tracking",
+  "Reports, Analytics & Role-based Access",
+];
 
 export default function ServiceErpIntro() {
   return (
-    <section className="relative py-32 bg-[#f7faf8] overflow-hidden">
-      {/* Background blobs */}
-      <div className="absolute -top-32 -left-32 w-[420px] h-[420px] bg-emerald-200/30 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-0 w-[450px] h-[450px] bg-emerald-300/20 rounded-full blur-3xl" />
+    <>
+      {/* SEO */}
+      <SEO
+        title="ERP & CRM Solutions | EasyTech Solutions"
+        description="Streamline your business with EasyTech Solutions ERP & CRM software. Manage inventory, sales, accounts, HR, CRM, and analytics from a centralized platform."
+      />
 
-      <div className="relative max-w-7xl mx-auto px-6  gap-24 items-center">
-           {/* RIGHT IMAGE */}
-        <motion.div
-          initial={{ opacity: 0, x: 80 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="relative"
-        >
-          <img
-            src={erpImg}
-            alt="ERP Software"
-            className="rounded-3xl shadow-2xl w-full h-[420px] object-cover"
-          />
+      <section className="relative py-10 bg-[#f7faf8] overflow-hidden">
+        {/* Background Gradients */}
+        <div className="absolute -top-32 -left-32 w-[420px] h-[420px] bg-[#98BC62]/30 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 -right-32 w-[420px] h-[420px] bg-[#232822]/20 rounded-full blur-[140px]" />
 
-          {/* Experience badge */}
-          <div className="absolute -bottom-8 right-8 bg-white shadow-2xl rounded-2xl px-8 py-6">
-            <p className="text-emerald-600 text-sm font-semibold">
-              5+ Years Experience
-            </p>
-            <h4 className="text-2xl font-bold text-gray-900">
-              ERP Excellence
-            </h4>
-          </div>
-        </motion.div>
+        <div className="relative max-w-7xl mx-auto px-2 md:px-6">
+          <div className="grid lg:grid-cols-1 gap-12 lg:gap-20 items-center">
 
-        {/* LEFT CONTENT */}
-        <motion.div
-          initial={{ opacity: 0, x: -80 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <p className="text-emerald-600 font-semibold uppercase tracking-widest mb-4">
-            ERP / CRM Solutions
-          </p>
+            {/* IMAGE */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.9, ease: "easeOut" }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <img
+                src={erpImg}
+                alt="ERP & CRM Solutions by EasyTech Solutions"
+                className="w-full h-[280px] sm:h-[360px] lg:h-[420px] object-cover rounded-3xl shadow-2xl"
+              />
 
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-6">
-            Smart ERP Software To Manage Your Entire Business
-          </h2>
-
-          <p className="text-gray-600 leading-relaxed mb-10 text-lg">
-            EasyTech Solutions provides powerful ERP and CRM systems designed to
-            simplify operations, automate workflows, and centralize your business
-            data. From inventory and accounts to HR, sales, and customer
-            management — everything is connected in one smart platform.
-          </p>
-
-          {/* Feature list */}
-          <div className="grid sm:grid-cols-2 gap-y-6 gap-x-10">
-            {[
-              "Inventory, Sales & Purchase Management",
-              "Accounts, HR & Payroll Automation",
-              "CRM, Leads & Client Tracking",
-              "Reports, Analytics & Role-based Access",
-            ].map((item, i) => (
-              <div key={i} className="flex items-start gap-3">
-                <div className="w-3 h-3 mt-2 bg-emerald-500 rounded-full" />
-                <p className="text-gray-700 font-medium">{item}</p>
+              {/* Experience Badge */}
+              <div className="absolute -bottom-6 right-4 bg-white rounded-2xl px-6 py-4 shadow-xl">
+                <p className="text-[#98BC62] text-sm font-semibold">
+                  5+ Years Experience
+                </p>
+                <h4 className="text-lg font-bold text-[#232822]">
+                  ERP Excellence
+                </h4>
               </div>
-            ))}
+            </motion.div>
+
+            {/* CONTENT */}
+            <motion.div
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9 }}
+              viewport={{ once: true }}
+            >
+              <h5 className="text-[#98BC62] font-semibold uppercase tracking-widest mb-4">
+                ERP / CRM Solutions
+              </h5>
+
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#232822] mb-6 leading-tight">
+                Smart ERP Software To Manage Your Entire Business
+              </h2>
+
+              <p className="text-[#232822] leading-relaxed mb-8 max-w-xl text-lg">
+                EasyTech Solutions provides powerful ERP and CRM systems designed to
+                simplify operations, automate workflows, and centralize your business
+                data. From inventory and accounts to HR, sales, and customer
+                management — everything is connected in one smart platform.
+              </p>
+
+              {/* FEATURES */}
+              <div className="grid sm:grid-cols-2 gap-5">
+                {features.map((item, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.1 }}
+                    viewport={{ once: true }}
+                    className="flex items-start gap-3"
+                  >
+                    <CheckCircle className="text-[#98BC62] mt-1" size={20} />
+                    <p className="text-[#232822]">{item}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
           </div>
-        </motion.div>
-
-     
-
-      </div>
-    </section>
+        </div>
+      </section>
+    </>
   );
 }

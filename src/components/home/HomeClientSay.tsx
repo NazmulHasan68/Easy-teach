@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 import client1 from "@/assets/img/client1.jpeg";
 import client2 from "@/assets/img/client2.jpeg";
@@ -28,7 +29,7 @@ const testimonials = [
   {
     img: client3,
     name: "Riaz Hossain",
-    role: "Co-founder, Miror Elegance & FashionLtd",
+    role: "Co-founder, Miror Elegance & Fashion Ltd",
     text:
       "The process was smooth, stress-free, and the result was outstanding.",
   },
@@ -66,63 +67,83 @@ export default function HomeClientSay() {
   const [active, setActive] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setActive((prev) => (prev + 1) % testimonials.length);
-    }, 4000);
-
-    return () => clearInterval(interval);
+    const i = setInterval(() => {
+      setActive((p) => (p + 1) % testimonials.length);
+    }, 4500);
+    return () => clearInterval(i);
   }, []);
 
   const item = testimonials[active];
 
   return (
-    <section className="py-28 bg-white">
-      <div className="max-w-5xl mx-auto px-6">
+    <section className="relative py-20 md:py-28 overflow-hidden">
+      {/* Premium gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#f6fbf6] via-white to-[#eef5ee]" />
+
+      {/* Soft blobs */}
+      <div className="absolute -top-32 -left-32 w-[380px] h-[380px] bg-[#98BC62]/20 blur-[130px] rounded-full" />
+      <div className="absolute bottom-0 -right-32 w-[380px] h-[380px] bg-[#2E602F]/20 blur-[130px] rounded-full" />
+
+      <div className="max-w-5xl mx-auto px-4 md:px-6 relative z-10">
         {/* Title */}
-        <div className="text-center mb-16">
-          <h5 className="text-green-600 font-semibold uppercase tracking-widest mb-4">
+        <header className="text-center mb-12 md:mb-16">
+          <p className="text-[#2E602F] font-semibold uppercase tracking-[0.35em] text-xs mb-4">
             Testimonials
-          </h5>
-          <h2 className="text-5xl font-bold text-gray-900">
-            Meet Our Happy Clients
+          </p>
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900">
+            What Our <span className="text-[#255326]">Clients</span> Say
           </h2>
-        </div>
+        </header>
 
-        {/* Slider Card */}
-        <div className="bg-[#f7faf8] rounded-3xl shadow-xl p-10 md:p-16 flex flex-col md:flex-row gap-10 items-center transition-all duration-700">
-          {/* Image */}
-          <div className="w-40 h-40 md:w-56 md:h-56 relative rounded-full overflow-hidden border-4 border-white shadow-lg flex-shrink-0">
-            <img
-              src={item.img}
-              alt={item.name}
-              className="object-cover"
-            />
-          </div>
+        {/* Testimonial Card */}
+        <div className="relative bg-white/80 backdrop-blur-xl border border-[#98BC62]/30 shadow-[0_30px_100px_rgba(45,96,46,0.12)] rounded-3xl p-6 sm:p-10 md:p-16">
+          <AnimatePresence mode="wait">
+            <motion.figure
+              key={active}
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -40 }}
+              transition={{ duration: 0.6 }}
+              className="flex flex-col md:flex-row items-center gap-8 md:gap-12"
+            >
+              {/* Client Image */}
+              <div className="w-28 h-28 sm:w-36 sm:h-36 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-white shadow-lg flex-shrink-0">
+                <img
+                  src={item.img}
+                  alt={item.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
 
-          {/* Content */}
-          <div className="text-center md:text-left">
-            <p className="text-gray-600 text-lg leading-relaxed mb-8">
-              “{item.text}”
-            </p>
+              {/* Text */}
+              <blockquote className="text-center md:text-left">
+                <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-6">
+                  “{item.text}”
+                </p>
 
-            <h4 className="text-2xl font-semibold text-gray-900">
-              {item.name}
-            </h4>
-            <span className="text-green-600 font-medium">
-              {item.role}
-            </span>
-          </div>
+                <figcaption>
+                  <h4 className="text-xl md:text-2xl font-semibold text-gray-900">
+                    {item.name}
+                  </h4>
+                  <span className="text-[#2E602F] font-medium text-sm md:text-base">
+                    {item.role}
+                  </span>
+                </figcaption>
+              </blockquote>
+            </motion.figure>
+          </AnimatePresence>
         </div>
 
         {/* Dots */}
-        <div className="flex justify-center gap-3 mt-10">
-          {testimonials.map((_, index) => (
+        <div className="flex justify-center gap-3 mt-8 md:mt-10">
+          {testimonials.map((_, i) => (
             <button
-              key={index}
-              onClick={() => setActive(index)}
+              key={i}
+              aria-label={`Show testimonial ${i + 1}`}
+              onClick={() => setActive(i)}
               className={`w-3 h-3 rounded-full transition-all ${
-                active === index
-                  ? "bg-green-600 scale-125"
+                active === i
+                  ? "bg-[#2E602F] scale-125"
                   : "bg-gray-300"
               }`}
             />

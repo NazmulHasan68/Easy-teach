@@ -17,7 +17,7 @@ export default function ContactLocation() {
         <div className="rounded-3xl overflow-hidden shadow-2xl border border-gray-200">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.902737450434!2d90.3669874!3d23.7728862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755bf6de2c3b19b%3A0xeeef7eec6d1d012a!2sEasy%20Tech%20Solutions!5e0!3m2!1sen!2sbd!4v1738220000000"
-            className="w-full h-[400px] md:h-[500px] border-0"
+            className="w-full h-[250px] md:h-[400px] border-0"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           />

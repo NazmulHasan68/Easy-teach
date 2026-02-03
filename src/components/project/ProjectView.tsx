@@ -1,63 +1,104 @@
-import { Link } from "react-router-dom";
-import project1 from "@/assets/img/project 1.png";
-import project2 from "@/assets/img/project 4.png";
-import project3 from "@/assets/img/project 3.png";
-import project4 from "@/assets/img/project 4.png";
-import project5 from "@/assets/img/project 5.png";
+"use client";
 
-const projects = [
-  { id: "01", title: "Ecommerce Website", category: "Web Application", image: project1, link: "/project/ecommerce" },
-  { id: "02", title: "CRM Software", category: "Web Application", image: project2, link: "/project/crm" },
-  { id: "03", title: "Dvalley Coworking Website", category: "Web Application", image: project3, link: "/project/dvalley" },
-  { id: "04", title: "Analytics Dashboard", category: "Marketing", image: project4, link: "/project/analytics" },
-  { id: "05", title: "ERP Software", category: "Web Application", image: project5, link: "/project/erp" },
-];
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { projectdetails } from "./projectData";
 
 export default function ProjectView() {
+  const [current, setCurrent] = useState(0);
+  const total = projectdetails.length;
+
+  const nextProject = () => setCurrent((p) => (p + 1) % total);
+  const prevProject = () => setCurrent((p) => (p - 1 + total) % total);
+
+  const project = projectdetails[current];
+
   return (
-    <section className="bg-neutral-100">
-      {projects.map((project, index) => (
-        <div key={project.id+index} className="h-screen relative">
-          {/* Sticky Paper */}
-          <div className="sticky top-0 h-screen flex items-center justify-center">
-            <div className="relative w-[90%] h-[85vh] rounded-3xl overflow-hidden shadow-2xl group">
-              
-              {/* Image */}
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
+    <section className="relative h-screen w-full overflow-hidden bg-black">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={project.projectID}
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 1.05 }}
+          transition={{ duration: 0.8 }}
+          className="absolute inset-0"
+        >
+          {/* Background Image */}
+          <img
+            src={project.project_images[0]}
+            alt={project.project_name}
+            className="w-full h-full object-cover"
+          />
 
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-black/50" />
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
 
-              {/* Number */}
-              <span className="absolute top-10 left-10 text-white text-7xl font-bold opacity-20">
-                {project.id}
-              </span>
+          {/* Info Card */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <motion.div
+              initial={{ y: 60, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="max-w-xl w-full mx-4 md:mx-0 bg-black/50 backdrop-blur-md border border-white/20 rounded-3xl p-6 md:p-10 text-white shadow-2xl"
+            >
+              <p className="uppercase tracking-widest text-sm text-[#98BC62] mb-2">
+                {project.category}
+              </p>
 
-              {/* Content */}
-              <div className="absolute bottom-16 left-16 text-white max-w-xl">
-                <p className="uppercase tracking-widest text-sm mb-3 opacity-80">
-                  {project.category}
-                </p>
+              <h2 className="text-3xl md:text-5xl font-bold leading-tight mb-4">
+                {project.project_name}
+              </h2>
 
-                <h2 className="text-5xl font-bold mb-6 leading-tight">
-                  {project.title}
-                </h2>
+              <p className="text-gray-200 mb-6 md:mb-8 text-sm md:text-base line-clamp-3">
+                {project.project_details}
+              </p>
 
-                <Link
-                  to={project.link}
-                  className="px-8 py-4 bg-emerald-600 rounded-full font-semibold hover:bg-emerald-700 transition"
-                >
-                  View Project →
-                </Link>
-              </div>
-            </div>
+              <Link
+                to={`/project/${project.projectID}`}
+                className="inline-block px-8 py-3 bg-gradient-to-r from-[#2E602F] to-[#98BC62] rounded-full font-semibold text-white hover:scale-105 transition"
+              >
+                View Project →
+              </Link>
+            </motion.div>
           </div>
-        </div>
-      ))}
+        </motion.div>
+      </AnimatePresence>
+
+      {/* Navigation */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-6 z-30">
+        <button
+          onClick={prevProject}
+          className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md text-white flex items-center justify-center hover:bg-[#98BC62] hover:text-white transition duration-300"
+        >
+          <ArrowLeft size={20} />
+        </button>
+
+        <span className="text-white font-semibold text-lg md:text-xl">
+          {current + 1} / {total}
+        </span>
+
+        <button
+          onClick={nextProject}
+          className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md text-white flex items-center justify-center hover:bg-[#98BC62] hover:text-white transition duration-300"
+        >
+          <ArrowRight size={20} />
+        </button>
+      </div>
+
+      {/* Mobile Swipe Hints */}
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-3 md:hidden">
+        {projectdetails.map((_, i) => (
+          <div
+            key={i}
+            className={`w-2 h-2 rounded-full transition-colors duration-300 ${
+              i === current ? "bg-[#98BC62]" : "bg-white/50"
+            }`}
+          />
+        ))}
+      </div>
     </section>
   );
 }

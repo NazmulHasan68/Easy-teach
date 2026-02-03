@@ -27,9 +27,9 @@ export default function ServiceErpQuestion() {
 
   return (
     <section className="py-12 bg-[#f7faf8]">
-      <div className="max-w-4xl mx-auto px-4">
+      <div className="max-w-4xl mx-auto px-1">
         {/* Section Title */}
-        <h2 className="text-2xl md:text-3xl font-bold text-[#232822] mb-12 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#232822] mb-12 text-center">
           Frequently Asked Questions
         </h2>
 
@@ -82,7 +82,7 @@ export default function ServiceErpQuestion() {
                       transition={{ duration: 0.35, ease: "easeInOut" }}
                       className="overflow-hidden"
                     >
-                      <div className="px-6 pb-6 text-[#232822] leading-relaxed text-base">
+                      <div className="p-3 pb-6 text-[#232822] leading-relaxed text-base">
                         {faq.answer}
                       </div>
                     </motion.div>

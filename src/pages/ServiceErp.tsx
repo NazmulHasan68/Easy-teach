@@ -1,11 +1,11 @@
 
-import AboutChallenges from "@/components/about/AboutChallenges";
-import AboutFAQ from "@/components/about/AboutFAQ";
-import AboutFeatures from "@/components/about/AboutFeatures";
 import AboutSidebar from "./AboutSidebar";
 import ServiceErpDemo from "@/components/Serives/ServiceErpDemo";
 import ServiceErpIntro from "@/components/Serives/ServiceErpIntro";
 import ServiceErpBanner from "@/components/Serives/ServiceErpBanner";
+import WhatWeProvide from "@/components/Serives/WhatWeProvide";
+import ServiceWebChallenges from "@/components/Serives/ServiceWebChallenges";
+import ServiceErpQuestion from "@/components/Serives/ServiceErpQustion";
 
 export default function ServiceErp() {
   return (
@@ -16,15 +16,15 @@ export default function ServiceErp() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
 
           {/* MAIN CONTENT */}
-          <div className="lg:col-span-8 order-2 lg:order-1 space-y-16">
+          <div className="lg:col-span-8 order-1 lg:order-1 space-y-8">
             <ServiceErpIntro />
-            <AboutFeatures />
-            <AboutChallenges />
-            <AboutFAQ />
+            <WhatWeProvide/>
+            <ServiceWebChallenges/>
+            <ServiceErpQuestion />
           </div>
 
           {/* SIDEBAR */}
-          <aside className="lg:col-span-4 order-1 lg:order-2">
+          <aside className="lg:col-span-4 order-2 lg:order-2">
             <div className="flex flex-col gap-2">
               <AboutSidebar />
               <ServiceErpDemo/>

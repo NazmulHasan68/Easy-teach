@@ -53,7 +53,7 @@ export default function AboutChallenges() {
       <div className="relative max-w-6xl mx-auto px-6">
         {/* Heading */}
         <div className="text-center mb-20">
-          <h5 className="text-green-600 font-semibold uppercase tracking-widest mb-4">
+          <h5 className="text-[#2E602F] font-semibold uppercase tracking-widest mb-4">
             Our Process
           </h5>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -81,7 +81,7 @@ export default function AboutChallenges() {
                 className="flex gap-6 group"
               >
                 {/* Icon */}
-                <div className="min-w-[60px] h-[60px] flex items-center justify-center rounded-xl bg-green-100 text-green-600 group-hover:scale-110 transition">
+                <div className="min-w-[60px] h-[60px] flex items-center justify-center rounded-xl bg-green-100 text-[#2E602F] group-hover:scale-110 transition">
                   <Icon size={28} />
                 </div>
 

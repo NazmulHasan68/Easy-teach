@@ -1,79 +1,102 @@
-
 "use client";
 
 import { motion } from "framer-motion";
 import aboutImg from "@/assets/img/Web Development.jpg";
+import { CheckCircle } from "lucide-react";
+import SEO from "../SEO";
+
+const features = [
+  "Modern UI with React & Tailwind",
+  "SEO Friendly & High Performance",
+  "Custom Features for Your Business",
+  "Secure Backend with PHP & Laravel",
+];
 
 export default function ServiceWebIntro() {
   return (
-    <section className="relative py-28 bg-[#f7faf8] overflow-hidden">
-      {/* Background shapes */}
-      <div className="absolute -top-20 -left-20 w-72 h-72 bg-green-200/30 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-green-300/20 rounded-full blur-3xl" />
+    <>
+      {/* SEO */}
+      <SEO
+        title="Web Application Development | EasyTech Solutions"
+        description="Professional web application development using React, Tailwind, PHP & Laravel. We build fast, secure, SEO-friendly websites for modern businesses."
+      />
 
-      <div className="relative max-w-7xl mx-auto px-6 grid lg:grid-cols-1 gap-20 items-center">
-        
-        {/* Image */}
-        <motion.div
-          initial={{ opacity: 0, x: -80 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="relative h-[350px]"
-        >
-          <img
-            src={aboutImg}
-            alt="About EasyTech Solutions"
-            className="rounded-3xl shadow-2xl w-full h-full object-cover"
-          />
+      <section className="relative py-10 bg-[#f7faf8] overflow-hidden">
+        {/* Background Gradients */}
+        {/* <div className="absolute -top-32 -left-32 w-[420px] h-[420px] bg-[#98BC62]/30 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 -right-32 w-[420px] h-[420px] bg-[#2E602F]/20 rounded-full blur-[140px]" /> */}
 
-          {/* Floating badge */}
-          <div className="absolute -bottom-6 -right-6 bg-white shadow-xl rounded-2xl px-6 py-4">
-            <p className="text-green-600 font-semibold text-sm">5+ Years Experience</p>
-            <h4 className="text-xl font-bold">Web Excellence</h4>
-          </div>
-        </motion.div>
+        <div className="relative max-w-7xl mx-auto px-2 md:px-6">
+          <div className="grid lg:grid-cols-1 gap-12 lg:gap-20 items-center">
+            
+            {/* IMAGE */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.9, ease: "easeOut" }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <img
+                src={aboutImg}
+                alt="Web Application Development by EasyTech Solutions"
+                className="w-full h-[280px] sm:h-[360px] lg:h-[420px] object-cover rounded-3xl shadow-2xl"
+              />
 
-        {/* Content */}
-        <motion.div
-          initial={{ opacity: 0, x: 80 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h5 className="text-green-600 font-semibold uppercase tracking-widest mb-4">
-            Who We Are
-          </h5>
-
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
-            Web Application Development
-          </h2>
-
-          <p className="text-gray-600 leading-relaxed mb-8">
-            At EasyTech Solutions, we turn your ideas into powerful digital experiences. From sleek 
-            websites to feature-packed online stores, we create solutions that are modern, responsive,
-            and built to perform.
-            Our team works with the latest tools — React, Bootstrap, Tailwind, PHP, and Laravel — to deliver
-             websites that not only look great but also rank higher on search engines. Need something 
-             custom? We’ve got you covered with tailored features designed to fit your business perfectly.
-          </p>
-
-          {/* Feature points */}
-          <div className="grid sm:grid-cols-2 gap-6">
-            {[
-              "Modern UI with React & Tailwind",
-              "SEO Friendly & High Performance",
-              "Custom Features for Your Business",
-              "Secure Backend with PHP & Laravel",
-            ].map((item, i) => (
-              <div key={i} className="flex items-start gap-3">
-                <div className="w-3 h-3 mt-2 bg-green-500 rounded-full" />
-                <p className="text-gray-700">{item}</p>
+              {/* Experience Badge */}
+              <div className="absolute -bottom-6 right-4 bg-white rounded-2xl px-6 py-4 shadow-xl">
+                <p className="text-[#2E602F] text-sm font-semibold">
+                  5+ Years Experience
+                </p>
+                <h4 className="text-lg font-bold text-gray-900">
+                  Web Excellence
+                </h4>
               </div>
-            ))}
+            </motion.div>
+
+            {/* CONTENT */}
+            <motion.div
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9 }}
+              viewport={{ once: true }}
+            >
+              <h5 className="text-[#2E602F] font-semibold uppercase tracking-widest mb-4">
+                Who We Are
+              </h5>
+
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                Web Application Development
+              </h2>
+
+              <p className="text-gray-600 leading-relaxed mb-8 max-w-xl">
+                At EasyTech Solutions, we transform your ideas into scalable,
+                high-performing digital products. From modern websites to
+                enterprise-grade applications, our solutions are secure,
+                responsive, and SEO-optimized for real business growth.
+              </p>
+
+              {/* FEATURES */}
+              <div className="grid sm:grid-cols-2 gap-5">
+                {features.map((item, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.1 }}
+                    viewport={{ once: true }}
+                    className="flex items-start gap-3"
+                  >
+                    <CheckCircle className="text-[#2E602F] mt-1" size={20} />
+                    <p className="text-gray-700">{item}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
           </div>
-        </motion.div>
-      </div>
-    </section>
+        </div>
+      </section>
+    </>
   );
 }

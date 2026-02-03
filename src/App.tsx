@@ -9,6 +9,7 @@ import OurClient from "./pages/OurClient";
 import ServiceErp from "./pages/ServiceErp";
 import ServiceWeb from "./pages/ServiceWeb";
 import ServiceDigital from "./pages/ServiceDigital";
+import ProjectDetails from "./pages/ProjectDetails";
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/project" element={<Project />} />
+          <Route path="/project/:prodectId" element={<ProjectDetails />} />
           <Route path="/our-client" element={<OurClient />} />
 
           {/* Services Main Page */}

@@ -15,93 +15,130 @@ export default function HomeTrustedClient() {
 
   return (
     <motion.section
-      animate={{ backgroundColor: scrolled ? "#f5faf6" : "#ffffff" }}
-      transition={{ duration: 0.6 }}
-      className="py-28"
+      initial={{ scale: 0.92, opacity: 0 }}
+      whileInView={{ scale: 1, opacity: 1 }}
+      transition={{ duration: 1.2, ease: "easeOut" }}
+      viewport={{ once: true }}
+      animate={{ backgroundColor: scrolled ? "#f3f8f3" : "#ffffff" }}
+      className="relative flex items-center justify-center overflow-hidden py-16"
     >
-      <div className="max-w-4xl mx-auto px-6">
-        
-        {/* TITLE */}
-        <motion.h3
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-          className="text-center text-4xl font-bold text-gray-900 mb-16"
-        >
-          Trusted by <span className="text-green-600">1000+ Businesses</span>
-        </motion.h3>
-
-        {/* CARD BAND */}
+      {/* ===== Organic Moving Blobs ===== */}
+      {[
+        { pos: "-top-32 -left-32", size: "w-[380px] h-[380px]" },
+        { pos: "bottom-0 -right-32", size: "w-[420px] h-[420px]" },
+        { pos: "top-[40%] left-[30%]", size: "w-[300px] h-[300px]" },
+      ].map((b, i) => (
         <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="bg-white rounded-3xl shadow-[0_40px_100px_rgba(0,0,0,0.08)] p-8 md:p-12"
-        >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
+          key={i}
+          animate={{
+            x: [0, 40, -30, 0],
+            y: [0, -50, 30, 0],
+          }}
+          transition={{
+            duration: 35 + i * 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className={`absolute ${b.pos} ${b.size} rounded-full blur-[150px] opacity-20`}
+          style={{
+            background:
+              "radial-gradient(circle at center, #98BC62 0%, #2D602E 100%)",
+          }}
+        />
+      ))}
 
-            {/* IMAGE */}
-            <motion.div
-              initial={{ scale: 0.9 }}
-              whileInView={{ scale: 1 }}
-              transition={{ delay: 0.2 }}
-              viewport={{ once: true }}
-              className="rounded-2xl overflow-hidden shadow-xl"
-            >
-              <img
-                src={TrustedImg}
-                alt="Trusted"
-                className="w-full h-[160px] object-cover"
+      {/* ===== Glass Card ===== */}
+      <motion.div
+        initial={{ opacity: 0, y: 100, rotateX: 8 }}
+        whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        viewport={{ once: true }}
+        whileHover={{ y: -8 }}
+        className="relative z-10 max-w-6xl w-full mx-2
+          backdrop-blur-xl bg-white/80
+          border border-[#98BC62]/30
+          rounded-[40px]
+          shadow-[0_50px_140px_rgba(45,96,46,0.15)]
+          p-6 md:p-12"
+      >
+        {/* glow */}
+        <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#98BC62]/20 blur-[120px] rounded-full" />
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 items-center">
+          {/* Title */}
+          <motion.h3
+            initial={{ opacity: 0, letterSpacing: "0.5em" }}
+            whileInView={{ opacity: 1, letterSpacing: "0em" }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+            className="text-center text-md md:text-2xl font-bold text-gray-900"
+          >
+            Trusted by{" "}
+            <span className="text-[#2D602E]">
+              1000+ Businesses Worldwide
+            </span>
+          </motion.h3>
+
+          {/* Image */}
+          <motion.div
+            initial={{ scale: 0.85 }}
+            whileInView={{ scale: 1 }}
+            whileHover={{ scale: 1.08 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="rounded-3xl overflow-hidden shadow-xl border border-[#98BC62]/30"
+          >
+            <img
+              src={TrustedImg}
+              alt="Trusted Clients"
+              className="w-full h-[120px] object-cover"
+            />
+          </motion.div>
+
+          {/* Rating */}
+          <motion.div
+            initial={{ scale: 0 }}
+            whileInView={{ scale: 1 }}
+            transition={{ type: "spring", stiffness: 120 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <div className="text-[#98BC62] text-2xl mb-4 tracking-widest">
+              ★★★★★
+            </div>
+            <p className="text-gray-600 text-sm md:text-base px-3">
+              Rated{" "}
+              <span className="font-semibold text-[#2D602E]">4.9/5</span> from
+              over 600 verified reviews
+            </p>
+          </motion.div>
+
+          {/* Traffic */}
+          <div>
+            <h4 className="text-xs md:text-sm text-gray-600 uppercase mb-3 tracking-widest">
+              Monthly Traffic Growth
+            </h4>
+
+            <h3 className="text-md md:text-2xl font-bold text-[#2D602E] mb-2 md:mb-4">
+              33.4k Visitors
+            </h3>
+
+            <div className="w-full h-2 md:h-3 bg-gray-200 rounded-full overflow-hidden">
+              <motion.div
+                initial={{ width: 0 }}
+                whileInView={{ width: "85%" }}
+                transition={{
+                  duration: 1.6,
+                  type: "spring",
+                  bounce: 0.4,
+                }}
+                viewport={{ once: true }}
+                className="h-full bg-gradient-to-r from-[#2D602E] to-[#98BC62]"
               />
-            </motion.div>
-
-            {/* RATING */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <div className="text-yellow-400 text-2xl mb-3">★★★★★</div>
-              <p className="text-gray-600 text-sm">
-                Rated{" "}
-                <span className="font-semibold text-gray-900">4.9/5</span> from
-                over 600 reviews
-              </p>
-            </motion.div>
-
-            {/* TRAFFIC */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              viewport={{ once: true }}
-            >
-              <h4 className="text-sm text-gray-500 uppercase mb-2">
-                Monthly Traffic
-              </h4>
-
-              <h3 className="text-3xl font-bold text-gray-900 mb-4">
-                33.4k
-              </h3>
-
-              <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: "85%" }}
-                  transition={{ duration: 1.2 }}
-                  viewport={{ once: true }}
-                  className="h-full bg-green-600"
-                />
-              </div>
-            </motion.div>
-
+            </div>
           </div>
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
     </motion.section>
   );
 }

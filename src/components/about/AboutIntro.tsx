@@ -28,7 +28,7 @@ export default function AboutIntro() {
 
           {/* Floating badge */}
           <div className="absolute -bottom-6 -right-6 bg-white shadow-xl rounded-2xl px-6 py-4">
-            <p className="text-green-600 font-semibold text-sm">5+ Years Experience</p>
+            <p className="text-[#2E602F] font-semibold text-sm">5+ Years Experience</p>
             <h4 className="text-xl font-bold">Digital Excellence</h4>
           </div>
         </motion.div>
@@ -40,7 +40,7 @@ export default function AboutIntro() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h5 className="text-green-600 font-semibold uppercase tracking-widest mb-4">
+          <h5 className="text-[#2E602F] font-semibold uppercase tracking-widest mb-4">
             Who We Are
           </h5>
 
