@@ -23,6 +23,26 @@ const navItems: NavItem[] = [
     ],
   },
   {
+    name: "Our Products",
+    dropdown: [
+      { name: "EasyManager", path: "/easy" },
+      { name: "EasyLeader", path: "/easy" },
+      { name: "EasyPOS", path: "/easy" },
+      { name: "EasyAccounts", path: "/easy" },
+      { name: "EasyInventory", path: "/easy" },
+      { name: "EasyResturant", path: "/easy" },
+    ],
+  },
+  {
+    name: "Our Consultants",
+    dropdown: [
+      { name: "DOKANX", path: "/consultant" },
+      { name: "Cascade", path: "/consultant" },
+      { name: "SHOMPORKOX", path: "/consultant" },
+      { name: "AbashonX", path: "/consultant" },
+    ],
+  },
+  {
     name: "Company",
     dropdown: [
       { name: "Project", path: "/project" },
@@ -36,7 +56,8 @@ const navItems: NavItem[] = [
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null); // desktop dropdown
+  const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null); // mobile dropdown
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -68,7 +89,7 @@ export default function Header() {
                 onMouseEnter={() => setOpenDropdown(item.name)}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
-                <button className="flex items-center gap-1 font-medium text-[#98BC62] hover:text-[#2E602F] transition">
+                <button className="flex items-center gap-1 font-medium text-[#668637] hover:text-[#2E602F] transition">
                   {item.name}
                   <ChevronDown size={16} />
                 </button>
@@ -123,7 +144,7 @@ export default function Header() {
       </div>
 
       {/* Mobile Drawer */}
-      <AnimatePresence >
+      <AnimatePresence>
         {mobileOpen && (
           <motion.div
             initial={{ x: "100%" }}
@@ -140,34 +161,66 @@ export default function Header() {
             </div>
 
             <div className="flex flex-col bg-white gap-3">
-              {navItems.map((item) =>
-                item.dropdown ? (
-                  <div key={item.name} className="flex flex-col">
-                    <p className="font-semibold text-[#243110] mb-2">
-                      {item.name}
-                    </p>
-                    {item.dropdown.map((sub) => (
-                      <NavLink
-                        key={sub.name}
-                        to={sub.path}
-                        onClick={() => setMobileOpen(false)}
-                        className="pl-3 py-2 text-[#101a01] hover:text-[#1b421c]"
+              {navItems.map((item) => (
+                <div key={item.name} className="flex flex-col">
+                  {item.dropdown ? (
+                    <>
+                      {/* Main Menu Button */}
+                      <button
+                        onClick={() =>
+                          setOpenMobileDropdown(
+                            openMobileDropdown === item.name
+                              ? null
+                              : item.name
+                          )
+                        }
+                        className="flex justify-between items-center font-semibold text-[#243110] py-2"
                       >
-                        {sub.name}
-                      </NavLink>
-                    ))}
-                  </div>
-                ) : (
-                  <NavLink
-                    key={item.name}
-                    to={item.path!}
-                    onClick={() => setMobileOpen(false)}
-                    className="py-2 font-medium text-[#98BC62] hover:text-[#2E602F]"
-                  >
-                    {item.name}
-                  </NavLink>
-                )
-              )}
+                        {item.name}
+                        <ChevronDown
+                          className={`transition-transform ${
+                            openMobileDropdown === item.name
+                              ? "rotate-180"
+                              : "rotate-0"
+                          }`}
+                          size={16}
+                        />
+                      </button>
+
+                      {/* Submenu Items */}
+                      <AnimatePresence>
+                        {openMobileDropdown === item.name && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            className="flex flex-col pl-4 gap-1 overflow-hidden"
+                          >
+                            {item.dropdown.map((sub) => (
+                              <NavLink
+                                key={sub.name}
+                                to={sub.path}
+                                onClick={() => setMobileOpen(false)}
+                                className="py-2 text-[#101a01] hover:text-[#1b421c]"
+                              >
+                                {sub.name}
+                              </NavLink>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </>
+                  ) : (
+                    <NavLink
+                      to={item.path!}
+                      onClick={() => setMobileOpen(false)}
+                      className="py-2 font-medium text-[#98BC62] hover:text-[#2E602F]"
+                    >
+                      {item.name}
+                    </NavLink>
+                  )}
+                </div>
+              ))}
             </div>
           </motion.div>
         )}

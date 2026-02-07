@@ -13,10 +13,12 @@ import ProjectDetails from "./pages/ProjectDetails";
 import ServiceWebDetails from "./pages/ServiceWebDetails";
 import ServiceDigitalProjectDetails from "./components/Serives/digital/ServiceDigitalProjectDetails";
 import ServiceErpProjectDetails from "./components/Serives/sofware/ServiceErpProjectDetails";
+import ScrollToTop from "./layouts/ScrollToTop";
 
 export default function App() {
   return (
     <BrowserRouter>
+     <ScrollToTop /> 
       <Routes>
         <Route element={<GeneralLayout />}>
           <Route path="/" element={<Home />} />
