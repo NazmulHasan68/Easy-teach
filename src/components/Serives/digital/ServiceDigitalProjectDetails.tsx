@@ -2,7 +2,7 @@
 
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { digitalServices } from "../data/digitalprojectDeta";
+import { digitalServices } from "../../data/digitalprojectDeta";
 
 export default function ServiceDigitalProjectDetails() {
   const { id } = useParams();

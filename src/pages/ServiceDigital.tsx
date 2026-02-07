@@ -1,11 +1,11 @@
 import AboutSidebar from "./AboutSidebar";
-import ServiceDigitalIntro from "@/components/Serives/ServiceDigitalIntro";
-import SericeDigitaldemo from "@/components/Serives/SericeDigitaldemo";
-import ServiceDigitalBanner from "@/components/Serives/ServiceDigitalbanner";
+import ServiceDigitalIntro from "@/components/Serives/digital/ServiceDigitalIntro";
+import SericeDigitaldemo from "@/components/Serives/digital/SericeDigitaldemo";
+import ServiceDigitalBanner from "@/components/Serives/digital/ServiceDigitalbanner";
 import WhatWeProvide from "@/components/Serives/WhatWeProvide";
-import ServiceWebChallenges from "@/components/Serives/ServiceWebChallenges";
-import ServiceDigitalQuestion from "@/components/Serives/ServiceDigitalQuestion";
-import ServiceDigitalProject from "@/components/Serives/ServiceDigitalProject";
+import ServiceWebChallenges from "@/components/Serives/web/ServiceWebChallenges";
+import ServiceDigitalQuestion from "@/components/Serives/digital/ServiceDigitalQuestion";
+import ServiceDigitalProject from "@/components/Serives/digital/ServiceDigitalProject";
 
 export default function ServiceDigital() {
   return (

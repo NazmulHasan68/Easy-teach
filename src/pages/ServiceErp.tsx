@@ -1,12 +1,12 @@
 
 import AboutSidebar from "./AboutSidebar";
-import ServiceErpDemo from "@/components/Serives/ServiceErpDemo";
-import ServiceErpIntro from "@/components/Serives/ServiceErpIntro";
-import ServiceErpBanner from "@/components/Serives/ServiceErpBanner";
+import ServiceErpDemo from "@/components/Serives/sofware/ServiceErpDemo";
+import ServiceErpIntro from "@/components/Serives/sofware/ServiceErpIntro";
+import ServiceErpBanner from "@/components/Serives/sofware/ServiceErpBanner";
 import WhatWeProvide from "@/components/Serives/WhatWeProvide";
-import ServiceWebChallenges from "@/components/Serives/ServiceWebChallenges";
-import ServiceErpQuestion from "@/components/Serives/ServiceErpQustion";
-import ServiceErpProject from "@/components/Serives/ServiceErpProject";
+import ServiceWebChallenges from "@/components/Serives/web/ServiceWebChallenges";
+import ServiceErpQuestion from "@/components/Serives/sofware/ServiceErpQustion";
+import ServiceErpProject from "@/components/Serives/sofware/ServiceErpProject";
 
 export default function ServiceErp() {
   return (

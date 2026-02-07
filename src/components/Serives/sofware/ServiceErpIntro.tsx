@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import erpImg from "@/assets/img/res.jpg"; // ERP related image
 import { CheckCircle } from "lucide-react";
-import SEO from "../SEO";
+import SEO from "../../SEO";
 
 const features = [
   "Inventory, Sales & Purchase Management",

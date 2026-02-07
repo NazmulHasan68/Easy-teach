@@ -2,7 +2,7 @@
 
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { erpProjects } from "../data/erpojectDeta";
+import { erpProjects } from "../../data/erpojectDeta";
 
 export default function ServiceErpProject() {
   return (

@@ -19,11 +19,11 @@ const navItems: NavItem[] = [
     dropdown: [
       { name: "Web Development", path: "/services/web" },
       { name: "Digital Marketing", path: "/services/marketing" },
-      { name: "ERP / CRM", path: "/services/erp" },
+      { name: "Software solution", path: "/services/erp" },
     ],
   },
   {
-    name: "Pages",
+    name: "Company",
     dropdown: [
       { name: "Project", path: "/project" },
       { name: "About", path: "/about" },

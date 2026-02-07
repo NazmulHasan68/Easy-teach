@@ -3,7 +3,7 @@ import AboutFAQ from "@/components/about/AboutFAQ";
 import AboutIntro from "@/components/about/AboutIntro";
 import AboutSidebar from "./AboutSidebar";
 import WhatWeProvide from "@/components/Serives/WhatWeProvide";
-import ServiceWebChallenges from "@/components/Serives/ServiceWebChallenges";
+import ServiceWebChallenges from "@/components/Serives/web/ServiceWebChallenges";
 
 export default function About() {
   return (

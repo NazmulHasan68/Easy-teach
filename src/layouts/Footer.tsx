@@ -88,7 +88,7 @@ export default function Footer() {
                 {col.links.map((name) => (
                   <li key={name}>
                     <a
-                      href="#"
+                      href=""
                       className="hover:text-[#98BC62] transition"
                     >
                       {name}

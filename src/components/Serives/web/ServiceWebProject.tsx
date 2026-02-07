@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { webProjects } from "../data/webprojectDeta";
+import { webProjects } from "../../data/webprojectDeta";
 
 export default function ServiceWebProject() {
   return (

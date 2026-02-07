@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import aboutImg from "@/assets/img/Web Development.jpg";
 import { CheckCircle } from "lucide-react";
-import SEO from "../SEO";
+import SEO from "../../SEO";
 
 const features = [
   "Modern UI with React & Tailwind",

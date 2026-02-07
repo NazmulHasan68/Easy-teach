@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import marketingImg from "@/assets/img/seo.jpg"; // marketing image
 import { CheckCircle } from "lucide-react";
-import SEO from "../SEO";
+import SEO from "../../SEO";
 
 const features = [
   "SEO & Search Ranking Optimization",

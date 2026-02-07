@@ -1,11 +1,11 @@
 import AboutSidebar from "./AboutSidebar";
-import ServiceWebdemo from "@/components/Serives/ServiceWebdemo";
-import ServiceWebIntro from "@/components/Serives/ServiceWebIntro";
-import ServiceWebbanner from "@/components/Serives/ServiceWebbanner";
+import ServiceWebdemo from "@/components/Serives/web/ServiceWebdemo";
+import ServiceWebIntro from "@/components/Serives/web/ServiceWebIntro";
+import ServiceWebbanner from "@/components/Serives/web/ServiceWebbanner";
 import WhatWeProvide from "@/components/Serives/WhatWeProvide";
-import ServiceWebChallenges from "@/components/Serives/ServiceWebChallenges";
-import ServiceWebQuestion from "@/components/Serives/ServiceWebQustion";
-import ServiceWebProject from "@/components/Serives/ServiceWebProject";
+import ServiceWebChallenges from "@/components/Serives/web/ServiceWebChallenges";
+import ServiceWebQuestion from "@/components/Serives/web/ServiceWebQustion";
+import ServiceWebProject from "@/components/Serives/web/ServiceWebProject";
 
 export default function ServiceWeb() {
   return (

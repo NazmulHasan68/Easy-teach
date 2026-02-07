@@ -11,8 +11,8 @@ import ServiceWeb from "./pages/ServiceWeb";
 import ServiceDigital from "./pages/ServiceDigital";
 import ProjectDetails from "./pages/ProjectDetails";
 import ServiceWebDetails from "./pages/ServiceWebDetails";
-import ServiceDigitalProjectDetails from "./components/Serives/ServiceDigitalProjectDetails";
-import ServiceErpProjectDetails from "./components/Serives/ServiceErpProjectDetails";
+import ServiceDigitalProjectDetails from "./components/Serives/digital/ServiceDigitalProjectDetails";
+import ServiceErpProjectDetails from "./components/Serives/sofware/ServiceErpProjectDetails";
 
 export default function App() {
   return (
